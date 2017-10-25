@@ -1,0 +1,14 @@
+<ion-content class="card-background-page">
+  <ion-card *ngFor='let card of cards; let i = index'>
+    <div (click) = "loadCardDetails(i)">
+      <img src={{card.src}}/>
+      <div class="card-title">{{card.name}}</div>
+      <div class="card-subtitle">{{card.expiry}}</div>
+    </div>
+  </ion-card>
+  <ion-fab bottom right>
+    <button ion-fab color="dark" icon-only (click)="takePicture()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src={{cardDetail.src}}/>
+  <h1> {{cardDetail.name}} </h1>
+  <h2> {{cardDetail.expiry}} </h2>
+  <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY" pickerFormat="MMM DD YYYY" [(ngModel)]="cardDetail.expiry" initialValue={{cardDetail.expiry}}></ion-datetime>
+  </ion-item>
+  <ion-item>
+      <ion-label>Remaind me</ion-label>
+      <ion-select interface = "action-sheet"
+                  (ionChange)="onSelectChange($event)"
+                  [(ngModel)]= "cardDetail.remainder" >
+        <ion-option *ngFor="let option of remainderOptions" value = {{option.value}} >
+            {{option.description}}
+        </ion-option>
+      </ion-select>
+  </ion-item>
+</ion-content>
+<ion-footer>
+    <button ion-button full round color="dark" type="submit" (click)="submitForm()">Save</button> 
+<ion-footer>

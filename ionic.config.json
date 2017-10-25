@@ -1,0 +1,8 @@
+{
+  "name": "cards",
+  "app_id": "97851f63",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
